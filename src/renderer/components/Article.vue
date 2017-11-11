@@ -1,6 +1,6 @@
 <template>
-  <el-container>
-    <el-aside :width="leftWidth" class="left">
+  <section>
+    <aside class="left" width="300px;">
       <div class="article-list-panel" v-for="(post, index) in posts" @click="selectPost($event, post)" ref="post">
         <div class="article-list-item">
           <h4 class="article-title">{{ post.title }}</h4>
@@ -11,44 +11,59 @@
           </ul>
         </div>
       </div>
-    </el-aside>
-    <el-main class="main" :style="{'width': contentWidth}">
-      <el-form ref="form" :model="curPost" label-width="60px">
-        <el-row>
-          <el-col :span="8">
-            <el-form-item label="标题" prop="title">
-              <el-input v-model="curPost.title"></el-input>
-            </el-form-item>
-          </el-col>
+    </aside>
+    <section class="main" :style="{'width': contentWidth}">
+      <Form ref="form" :model="curPost" :label-width="60" style="width: 100%;">
+        <Row>
+          <Col :span="12">
+          <FormItem label="标题" prop="title">
+            <Input v-model="curPost.title"></Input>
+          </FormItem>
+          </Col>
 
-          <el-col :span="8">
-            <el-form-item label="作者" prop="title">
-              <el-input v-model="curPost.author"></el-input>
-            </el-form-item>
-          </el-col>
+          <Col :span="12">
+          <FormItem label="作者" prop="title">
+            <Input v-model="curPost.author"></Input>
+          </FormItem>
+          </Col>
+          </Col>
+        </Row>
 
-          <el-col :span="8">
-            <el-form-item label="标签" prop="title">
-              <el-select v-model="curPost.tags" multiple filterable allow-create placeholder="请选择文章标签">
-                <el-option v-for="tag in tags" :key="tag" :label="tag" :value="tag"></el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="24" style="margin: 0px;">
-            <editor ref="editor" :editor-height="editorHeight" :value="curPost.content"
-                    v-model="curPost.content"></editor>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="24">
-            <el-button type="primary" style="float: right; margin-right: 10px;" @click="writePost">保存</el-button>
-          </el-col>
-        </el-row>
-      </el-form>
-    </el-main>
-  </el-container>
+        <Row>
+          <Col :span="24">
+          <FormItem label="标签" prop="title">
+            <Tag v-for="tag in curPost.tags" :key="tag" :name="tag" closable @on-close="delTag">{{ tag }}</Tag>
+            <!--<Button icon="ios-plus-empty" type="dashed" size="small" @click="addTag">添加标签</Button>-->
+            <AutoComplete
+                :data="tags"
+                :filter-method="filterTags"
+                v-model="inputTagText"
+                @on-select="addTag"
+                @keyup.native.enter="inputTag"
+                size="small"
+                placeholder="Input tag"
+                style="width:120px">
+            </AutoComplete>
+          </FormItem>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col :span="24" style="margin: 0px;">
+          <editor ref="editor" :editor-height="editorHeight" :value="curPost.content"
+                  v-model="curPost.content"></editor>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col :span="24">
+          <Button type="primary" icon="ios-compose" style="float: right; margin-right: 10px;" @click="writePost">发表
+          </Button>
+          </Col>
+        </Row>
+      </Form>
+    </section>
+  </section>
 </template>
 
 <script>
@@ -58,11 +73,11 @@
     data () {
       return {
         windowHeight: '300px', // 窗口高度
-        leftWidth: '300px', // 侧边宽度
         contentWidth: '200px', // 内容宽度
         editorHeight: '300px', // 编辑器高度
-        tags: [],
-        curPost: {} // 当前文章
+        tags: [], // all tags
+        curPost: {}, // 当前文章
+        inputTagText: ''
       }
     },
     methods: {
@@ -71,6 +86,11 @@
         this.editorHeight = (document.documentElement.clientHeight - 280) + 'px'
       },
 
+      /**
+       * 选中文章
+       * @param event
+       * @param post
+       */
       selectPost (event, post) {
         // 设置当前选中数据
         this.curPost = JSON.parse(JSON.stringify(post))
@@ -81,8 +101,53 @@
         event.currentTarget.classList.add('active')
       },
 
+      /**
+       * 发表文章
+       */
       writePost () {
         this.$store.dispatch('writePost', this.curPost)
+      },
+
+      /**
+       * search tags
+       */
+      filterTags (value, option) {
+        return option.toUpperCase().indexOf(value.toUpperCase()) !== -1
+      },
+
+      /**
+       * 添加标签
+       */
+      addTag (tag) {
+        var contains = false
+        for (var i = 0; i < this.curPost.tags.length; i++) {
+          if (this.curPost.tags[i].toUpperCase() === tag.toUpperCase()) {
+            contains = true
+            break
+          }
+        }
+        if (contains) {
+          this.$Message.warning('tag exists')
+        } else {
+          this.curPost.tags.push(tag)
+        }
+      },
+
+      /**
+       * input tag
+       */
+      inputTag () {
+        this.addTag(this.inputTagText)
+      },
+
+      /**
+       * 删除标签
+       * @param event
+       * @param name
+       */
+      delTag (event, name) {
+        const index = this.curPost.tags.indexOf(name)
+        this.curPost.tags.splice(index, 1)
       }
     },
     computed: {
@@ -118,6 +183,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     background-color: rgb(238, 241, 246);
+    width: 300px;
   }
 
   .main {

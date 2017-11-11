@@ -1,28 +1,24 @@
 <template>
-  <div id="app" v-loading.fullscreen.lock="!sysInited && sysConfigInited">
-    <el-container :style="{'height': windowHeight, 'border': 'solid 1px red;'}" v-if="sysInited">
-      <el-header class="header">
+  <div id="app">
+    <section class="is-vertical" :style="{'height': windowHeight}" v-if="sysInited">
+      <header>
         <page-header></page-header>
-      </el-header>
-
+      </header>
       <router-view></router-view>
+    </section>
 
-    </el-container>
-
-    <el-dialog title="请配置正确的路径" :visible="!sysConfigInited"
-               :close-on-click-modal="false"
-               :close-on-press-escape="false"
-               :show-close="false"
-               :center="true">
-      <el-form>
-        <el-form-item label="路径" label-width="50px">
-          <el-input v-model="path" auto-complete="off"></el-input>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="setPath">确 定</el-button>
+    <Modal v-model="showPathConfig" width="360" :closable="false" :mask-closable="false">
+      <p slot="header" style="color:#f60;text-align:center">
+        <Icon type="information-circled"></Icon>
+        <span>请配置正确的路径</span>
+      </p>
+      <div style="text-align:center">
+        <Input v-model="path" placeholder="请配置正确的Hexo路径"/>
       </div>
-    </el-dialog>
+      <div slot="footer">
+        <Button type="error" size="large" long @click="setPath"> 确 定 </Button>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -30,6 +26,7 @@
   import PageHeader from '@/components/PageHeader.vue'
 
   export default {
+    name: 'hexo-client',
     data () {
       return {
         windowHeight: '300px', // 窗口高度
@@ -44,6 +41,9 @@
       },
       sysInited: function () {
         return this.$store.getters.sysInited
+      },
+      showPathConfig: function () {
+        return !this.$store.getters.sysConfigInited
       }
     },
 
@@ -107,7 +107,48 @@
     background: transparent;
   }
 
-  .header {
+  header {
+    padding: 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    height: 60px;
     padding: 0px;
+  }
+
+  aside {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-sizing: border-box;
+    -ms-flex-direction: row;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+  }
+
+  section.is-vertical {
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 20px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
   }
 </style>
