@@ -36,7 +36,7 @@
 
       <Row>
         <Col :span="24" style="margin: 0px;">
-        <editor ref="editor" :editor-height="editorHeight" :value="post.content"
+        <editor ref="editor" :editor-height="editorHeight" :value="post.content" input-active-name="edit"
                 v-model="post.content"></editor>
         </Col>
       </Row>
@@ -88,8 +88,8 @@
        */
       addTag (tag) {
         var contains = false
-        for (var i = 0; i < this.curPost.tags.length; i++) {
-          if (this.curPost.tags[i].toUpperCase() === tag.toUpperCase()) {
+        for (var i = 0; i < this.post.tags.length; i++) {
+          if (this.post.tags[i].toUpperCase() === tag.toUpperCase()) {
             contains = true
             break
           }
@@ -97,7 +97,7 @@
         if (contains) {
           this.$Message.warning('tag exists')
         } else {
-          this.curPost.tags.push(tag)
+          this.post.tags.push(tag)
         }
       },
 
@@ -114,8 +114,8 @@
        * @param name
        */
       delTag (event, name) {
-        const index = this.curPost.tags.indexOf(name)
-        this.curPost.tags.splice(index, 1)
+        const index = this.post.tags.indexOf(name)
+        this.post.tags.splice(index, 1)
       }
     },
 
