@@ -95,7 +95,7 @@
           }
         }
         if (contains) {
-          this.$Message.warning('tag exists')
+          this.$Message.warning('标签已存在。')
         } else {
           this.post.tags.push(tag)
         }

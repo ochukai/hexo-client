@@ -1,5 +1,6 @@
 import HexoUtils from '@/HexoUtils'
 import DBUtils from '@/DBUtils'
+import router from '@/router'
 
 export default {
   state: {
@@ -77,6 +78,7 @@ export default {
       if (path) {
         HexoUtils.writePost(path, post)
         context.commit('INIT_HEXO', path)
+        router.push('/article')
       } else {
         window.alert('请先配置path')
       }
