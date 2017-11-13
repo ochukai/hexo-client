@@ -86,7 +86,7 @@
             {required: true, message: '请输入文章标题', trigger: 'blur'}
           ],
           content: [
-            {required: true, message: '请输入文章标题', trigger: 'blur'}
+            {required: true, message: '请输入文章内容', trigger: 'blur'}
           ]
         }
       }

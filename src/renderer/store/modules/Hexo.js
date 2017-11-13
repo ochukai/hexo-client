@@ -1,6 +1,7 @@
 import HexoUtils from '@/HexoUtils'
 import DBUtils from '@/DBUtils'
 import router from '@/router'
+import vue from 'vue'
 
 export default {
   state: {
@@ -83,6 +84,7 @@ export default {
       if (path) {
         HexoUtils.craetePost(path, post)
         context.commit('INIT_HEXO', path)
+        vue.prototype.$Message.success('文章创建成功')
         router.push('/article')
       } else {
         window.alert('请先配置path')
@@ -98,6 +100,7 @@ export default {
       var path = context.state.sysConfig.path
       if (path) {
         HexoUtils.updatePost(path, data.originPost, data.post)
+        vue.prototype.$Message.success('文章修改成功')
         context.commit('INIT_HEXO', path)
         router.push('/article')
       } else {
