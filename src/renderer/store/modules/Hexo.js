@@ -73,10 +73,31 @@ export default {
       })
     },
 
-    writePost (context, post) {
+    /**
+     * 写文章
+     * @param context
+     * @param post
+     */
+    craetePost (context, post) {
       var path = context.state.sysConfig.path
       if (path) {
-        HexoUtils.writePost(path, post)
+        HexoUtils.craetePost(path, post)
+        context.commit('INIT_HEXO', path)
+        router.push('/article')
+      } else {
+        window.alert('请先配置path')
+      }
+    },
+
+    /**
+     * 更新文章
+     * @param context
+     * @param data
+     */
+    updatePost (context, data) {
+      var path = context.state.sysConfig.path
+      if (path) {
+        HexoUtils.updatePost(path, data.originPost, data.post)
         context.commit('INIT_HEXO', path)
         router.push('/article')
       } else {

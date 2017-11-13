@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8176cb6-3d39-4233-89e6-30ea0f64552b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/HexoUtils.js" afterPath="$PROJECT_DIR$/src/renderer/HexoUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/components/Article.vue" afterPath="$PROJECT_DIR$/src/renderer/components/Article.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" afterPath="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" afterPath="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +21,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Article.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Article.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/renderer/components/Article.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="94" column="72" lean-forward="false" selection-start-line="94" selection-start-column="72" selection-end-line="94" selection-end-column="72" />
+                <state relative-caret-position="563">
+                  <caret line="123" column="19" lean-forward="false" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
                   <folding>
                     <element signature="n#style#0;n#Form#0;n#section#0;n#section#0;n#template#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#section#0;n#template#0;n#!!top" expanded="true" />
@@ -33,24 +36,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/renderer/components/Index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Hexo.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Hexo.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/renderer/store/modules/Hexo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="129">
-                  <caret line="73" column="6" lean-forward="true" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+                <state relative-caret-position="452">
+                  <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
-                    <marker date="1510377580511" expanded="true" signature="2517:2519" ph="//..." />
+                    <marker date="1510552778302" expanded="true" signature="2954:2956" ph="//..." />
                   </folding>
                 </state>
               </provider>
@@ -59,8 +52,8 @@
           <file leaf-file-name="HexoUtils.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+                <state relative-caret-position="484">
+                  <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="2" selection-end-line="107" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -69,8 +62,8 @@
           <file leaf-file-name="ArticleCreate.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
+                <state relative-caret-position="270">
+                  <caret line="87" column="48" lean-forward="false" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
                   <folding>
                     <element signature="n#style#0;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
@@ -98,8 +91,8 @@
           <file leaf-file-name="ArticleCreate.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="76" column="11" lean-forward="true" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+                <state relative-caret-position="240">
+                  <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
                   <folding>
                     <element signature="n#style#0;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
@@ -124,10 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>debugger</find>
-      <find>&quot;vue&quot;: &quot;^2.3.3&quot;,</find>
-      <find>vue</find>
-      <find>'vue</find>
       <find>import vue</find>
       <find>fpm</find>
       <find>loading</find>
@@ -154,6 +143,10 @@
       <find>validateRules</find>
       <find>title</find>
       <find>update</find>
+      <find>writePost</find>
+      <find>craetePost</find>
+      <find>writepost</find>
+      <find>updatePost</find>
     </findStrings>
     <replaceStrings>
       <replace>date</replace>
@@ -204,10 +197,10 @@
         <option value="$PROJECT_DIR$/src/renderer/router/index.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/Index.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/Config.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" />
         <option value="$PROJECT_DIR$/src/renderer/HexoUtils.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/Article.vue" />
+        <option value="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" />
       </list>
     </option>
   </component>
@@ -470,12 +463,12 @@
       <workItem from="1510105468018" duration="18718000" />
       <workItem from="1510373217273" duration="3628000" />
       <workItem from="1510392430089" duration="18000" />
-      <workItem from="1510392642167" duration="1612000" />
+      <workItem from="1510392642167" duration="2373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137195000" />
+    <option name="totallyTimeSpent" value="137956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -484,6 +477,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24861111" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873276" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -511,7 +505,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873276" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -788,37 +781,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/store/modules/Hexo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="73" column="6" lean-forward="true" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1510377580511" expanded="true" signature="2517:2519" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/components/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="45">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="87" column="48" lean-forward="false" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#2;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Button#0;n#Row#3;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/components/Article.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="94" column="72" lean-forward="false" selection-start-line="94" selection-start-column="72" selection-end-line="94" selection-end-column="72" />
+        <state relative-caret-position="563">
+          <caret line="123" column="19" lean-forward="false" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#Form#0;n#section#0;n#section#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#section#0;n#template#0;n#!!top" expanded="true" />
@@ -828,15 +815,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue">
+    <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="76" column="11" lean-forward="true" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+        <state relative-caret-position="484">
+          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="2" selection-end-line="107" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/store/modules/Hexo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
           <folding>
-            <element signature="n#style#0;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#AutoComplete#0;n#FormItem#0;n#Row#1;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#2;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Button#0;n#Row#3;n#Form#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1510552778302" expanded="true" signature="2954:2956" ph="//..." />
           </folding>
         </state>
       </provider>

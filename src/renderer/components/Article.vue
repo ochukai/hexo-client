@@ -58,7 +58,8 @@
 
         <Row>
           <Col :span="24">
-          <Button type="primary" icon="ios-compose" style="float: right; margin-right: 10px;" @click="writePost">发表
+          <Button type="primary" icon="ios-compose" style="float: right; margin-right: 10px;" @click="updatePost">
+            修 改
           </Button>
           </Col>
         </Row>
@@ -78,6 +79,7 @@
         editorHeight: '300px', // 编辑器高度
         tags: [], // all tags
         curPost: {}, // 当前文章
+        originPost: {}, // 保留一份没修改的文章对象
         inputTagText: '',
         validateRules: {
           title: [
@@ -103,6 +105,7 @@
       selectPost (event, post) {
         // 设置当前选中数据
         this.curPost = JSON.parse(JSON.stringify(post))
+        this.originPost = JSON.parse(JSON.stringify(post))
         // 设置选中样式
         this.$refs.post.forEach(item => {
           item.classList.remove('active')
@@ -113,10 +116,13 @@
       /**
        * 发表文章
        */
-      writePost () {
+      updatePost () {
         this.$refs.form.validate((valid) => {
           if (valid) {
-            this.$store.dispatch('writePost', this.curPost)
+            this.$store.dispatch('updatePost', {
+              originPost: this.originPost,
+              post: this.curPost
+            })
           }
         })
       },
@@ -177,6 +183,7 @@
       // 默认选中第一篇文章
       if (this.posts && this.posts.length > 0) {
         this.curPost = JSON.parse(JSON.stringify(this.posts[0]))
+        this.originPost = JSON.parse(JSON.stringify(this.posts[0]))
         this.$refs.post[0].classList.add('active')
       }
     },

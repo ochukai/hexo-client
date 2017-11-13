@@ -45,7 +45,7 @@
 
       <Row>
         <Col :span="24">
-        <Button type="primary" icon="ios-compose" style="float: right; margin-right: 10px;" @click="writePost">发表
+        <Button type="primary" icon="ios-compose" style="float: right; margin-right: 10px;" @click="craetePost">发表
         </Button>
         </Col>
       </Row>
@@ -82,10 +82,10 @@
       handleResize () {
         this.editorHeight = (document.documentElement.clientHeight - 320) + 'px'
       },
-      writePost () {
+      craetePost () {
         this.$refs.form.validate((valid) => {
           if (valid) {
-            this.$store.dispatch('writePost', this.post)
+            this.$store.dispatch('craetePost', this.post)
           }
         })
       },
