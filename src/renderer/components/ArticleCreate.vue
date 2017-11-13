@@ -1,6 +1,6 @@
 <template>
   <section class="main">
-    <Form ref="form" :model="post" :label-width="60" style="width: 100%;">
+    <Form ref="form" :model="post" :label-width="60" :rules="validateRules" style="width: 100%;">
       <Row>
         <Col :span="12">
         <FormItem label="标题" prop="title">
@@ -9,8 +9,8 @@
         </Col>
 
         <Col :span="12">
-        <FormItem label="作者" prop="title">
-          <Input v-model="post.author"></Input>
+        <FormItem label="作者" prop="author">
+          <Input v-model="post.author" readonly></Input>
         </FormItem>
         </Col>
         </Col>
@@ -18,7 +18,7 @@
 
       <Row>
         <Col :span="24">
-        <FormItem label="标签" prop="title">
+        <FormItem label="标签" prop="tags">
           <Tag v-for="tag in post.tags" :key="tag" :name="tag" closable @on-close="delTag">{{ tag }}</Tag>
           <AutoComplete
               :data="tags"
@@ -36,8 +36,10 @@
 
       <Row>
         <Col :span="24" style="margin: 0px;">
-        <editor ref="editor" :editor-height="editorHeight" :value="post.content" input-active-name="edit"
-                v-model="post.content"></editor>
+        <FormItem label="" prop="content">
+          <editor ref="editor" :editor-height="editorHeight" :value="post.content" input-active-name="edit"
+                  v-model="post.content"></editor>
+        </FormItem>
         </Col>
       </Row>
 
@@ -65,15 +67,27 @@
           author: '',
           tags: []
         },
-        inputTagText: ''
+        inputTagText: '',
+        validateRules: {
+          title: [
+            {required: true, message: '请输入文章标题', trigger: 'blur'}
+          ],
+          content: [
+            {required: true, message: '请输入文章标题', trigger: 'blur'}
+          ]
+        }
       }
     },
     methods: {
       handleResize () {
-        this.editorHeight = (document.documentElement.clientHeight - 280) + 'px'
+        this.editorHeight = (document.documentElement.clientHeight - 320) + 'px'
       },
       writePost () {
-        this.$store.dispatch('writePost', this.post)
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.$store.dispatch('writePost', this.post)
+          }
+        })
       },
 
       /**
