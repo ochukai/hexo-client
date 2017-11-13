@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8176cb6-3d39-4233-89e6-30ea0f64552b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/components/Article.vue" afterPath="$PROJECT_DIR$/src/renderer/components/Article.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" afterPath="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" afterPath="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/renderer/HexoUtils.js" afterPath="$PROJECT_DIR$/src/renderer/HexoUtils.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hexo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hexo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renderer/store/modules/Hexo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="76">
+              <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="28" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1510552907642" expanded="true" signature="3074:3076" ph="//..." />
@@ -46,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HexoUtils.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HexoUtils.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="165" column="3" lean-forward="true" selection-start-line="165" selection-start-column="3" selection-end-line="165" selection-end-column="3" />
+            <state relative-caret-position="473">
+              <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -93,7 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fpm</find>
       <find>loading</find>
       <find>close</find>
       <find>sysInited</find>
@@ -123,6 +120,7 @@
       <find>writepost</find>
       <find>updatePost</find>
       <find>access</find>
+      <find>createPost</find>
     </findStrings>
     <replaceStrings>
       <replace>date</replace>
@@ -173,10 +171,10 @@
         <option value="$PROJECT_DIR$/src/renderer/router/index.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/Index.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/Config.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/HexoUtils.js" />
         <option value="$PROJECT_DIR$/src/renderer/store/modules/Hexo.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/Article.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/ArticleCreate.vue" />
+        <option value="$PROJECT_DIR$/src/renderer/HexoUtils.js" />
       </list>
     </option>
   </component>
@@ -439,12 +437,12 @@
       <workItem from="1510105468018" duration="18718000" />
       <workItem from="1510373217273" duration="3628000" />
       <workItem from="1510392430089" duration="18000" />
-      <workItem from="1510392642167" duration="2579000" />
+      <workItem from="1510392642167" duration="2631000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138162000" />
+    <option name="totallyTimeSpent" value="138214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -791,22 +789,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="165" column="3" lean-forward="true" selection-start-line="165" selection-start-column="3" selection-end-line="165" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/store/modules/Hexo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="76">
+          <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="28" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1510552907642" expanded="true" signature="3074:3076" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/HexoUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -94,6 +94,7 @@ class HexoUtils {
   }
 
   craetePost (dir, post) {
+    // TODO 检查文件是否存在
     var path = dir + '/source/_posts/' + post.title + '.md'
     var content = this.markdown(post)
     fs.writeFileSync(path, content)
@@ -106,6 +107,7 @@ class HexoUtils {
    * @param post 修改后的文章
    */
   updatePost (dir, originPost, post) {
+    // TODO 检查文件是否存在
     var originPath = dir + '/source/_posts/' + originPost.title + '.md' // 原路径
     var path = dir + '/source/_posts/' + post.title + '.md' // 新路径
     if (originPost.title !== post.title) { // 如果修改了文件名称，需要先rename一下
