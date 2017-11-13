@@ -13,7 +13,7 @@
       </div>
     </aside>
     <section class="main" :style="{'width': contentWidth}">
-      <Form ref="form" :model="curPost" :label-width="60" style="width: 100%;">
+      <Form ref="form" :model="curPost" :label-width="60" :rules="validateRules" style="width: 100%;">
         <Row>
           <Col :span="12">
           <FormItem label="标题" prop="title">
@@ -22,7 +22,7 @@
           </Col>
 
           <Col :span="12">
-          <FormItem label="作者" prop="title">
+          <FormItem label="作者" prop="author">
             <Input v-model="curPost.author"></Input>
           </FormItem>
           </Col>
@@ -31,9 +31,8 @@
 
         <Row>
           <Col :span="24">
-          <FormItem label="标签" prop="title">
+          <FormItem label="标签" prop="tags">
             <Tag v-for="tag in curPost.tags" :key="tag" :name="tag" closable @on-close="delTag">{{ tag }}</Tag>
-            <!--<Button icon="ios-plus-empty" type="dashed" size="small" @click="addTag">添加标签</Button>-->
             <AutoComplete
                 :data="tags"
                 :filter-method="filterTags"
@@ -50,8 +49,10 @@
 
         <Row>
           <Col :span="24" style="margin: 0px;">
-          <editor ref="editor" :editor-height="editorHeight" :value="curPost.content"
-                  v-model="curPost.content"></editor>
+          <FormItem label="" prop="content">
+            <editor ref="editor" :editor-height="editorHeight" :value="curPost.content"
+                    v-model="curPost.content"></editor>
+          </FormItem>
           </Col>
         </Row>
 
@@ -77,13 +78,21 @@
         editorHeight: '300px', // 编辑器高度
         tags: [], // all tags
         curPost: {}, // 当前文章
-        inputTagText: ''
+        inputTagText: '',
+        validateRules: {
+          title: [
+            {required: true, message: '请输入文章标题', trigger: 'blur'}
+          ],
+          content: [
+            {required: true, message: '请输入文章标题', trigger: 'blur'}
+          ]
+        }
       }
     },
     methods: {
       handleResize () {
         this.contentWidth = (document.documentElement.clientWidth - 320) + 'px'
-        this.editorHeight = (document.documentElement.clientHeight - 280) + 'px'
+        this.editorHeight = (document.documentElement.clientHeight - 320) + 'px'
       },
 
       /**
@@ -105,7 +114,11 @@
        * 发表文章
        */
       writePost () {
-        this.$store.dispatch('writePost', this.curPost)
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.$store.dispatch('writePost', this.curPost)
+          }
+        })
       },
 
       /**
